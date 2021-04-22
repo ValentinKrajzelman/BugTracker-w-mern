@@ -4,12 +4,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // import LoginButton from "./loginBtn.component";
 
-const NavBar1 = () => {
+const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
 
   return (
     <nav className="navbar bg-light navbar-expand-sm navbar-light">
-      <Link to="/" className="navbar-brand">
+      <Link to="/" className="navbar-brand ml-3">
+        <img src="favicon.png" height="40"></img>
         BugTracker <small>v0.1</small>
       </Link>
 
@@ -30,7 +31,7 @@ const NavBar1 = () => {
             Link 2
           </a>
           <a class="dropdown-item" href="#">
-            Link 3
+            Link
           </a>
         </div>
       </div>
@@ -56,4 +57,4 @@ const NavBar1 = () => {
   );
 };
 
-export default NavBar1;
+export default NavBar;
