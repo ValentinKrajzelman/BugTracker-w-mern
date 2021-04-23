@@ -13,28 +13,26 @@ const NavBar = () => {
         <img src="favicon.png" height="40"></img>
         BugTracker <small>v0.1</small>
       </Link>
-
-      <div className="nav-item dropdown navbar-text">
-        <a
-          className="nav-link dropdown-toggle"
-          href="#"
-          id="navbardrop"
-          data-toggle="dropdown"
-        >
-          Lista De Proyectos
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">
-            Link 1
+      {isAuthenticated && (
+        <div className="nav-item dropdown navbar-text">
+          <a
+            className="nav-link dropdown-toggle"
+            href="#"
+            id="navbardrop"
+            data-toggle="dropdown"
+          >
+            Tus Proyectos
           </a>
-          <a class="dropdown-item" href="#">
-            Link 2
-          </a>
-          <a class="dropdown-item" href="#">
-            Link
-          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">
+              nada juj
+            </a>
+          </div>
         </div>
-      </div>
+      )}
+      <Link to="newProject">
+        <button className="rounded-circle border border-dark">+</button>
+      </Link>
 
       <ul className="navbar-nav ml-auto">
         {!isAuthenticated && (

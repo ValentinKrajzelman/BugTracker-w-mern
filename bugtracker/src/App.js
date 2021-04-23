@@ -4,6 +4,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import NavBar from "./components/navbar1.component";
 import LandingPage from "./components/landingPage.component";
+import mainUserPage from "./components/mainUserPage.component";
+import newProject from "./components/newProject.component";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -13,7 +15,15 @@ function App() {
       <div className="container-fluid p-0">
         <NavBar />
       </div>
-      <Route path="/" component={LandingPage}></Route>
+      {!isAuthenticated && (
+        <Route exact path="/" component={LandingPage}></Route>
+      )}
+      {isAuthenticated && (
+        <Route exact path="/" component={mainUserPage}></Route>
+      )}
+      {isAuthenticated && (
+        <Route path="/newProject" component={newProject}></Route>
+      )}
     </Router>
   );
 }
