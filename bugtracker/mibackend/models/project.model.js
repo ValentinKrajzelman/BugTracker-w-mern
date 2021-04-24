@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
-  name: { type: String, required: true },
-  version: { type: Number, required: true },
-  // bugs_ids: [{ type: Schema.Types.objectId, ref: "Bug" }], cambie esto que me parecio innecesariamente complejo.
-  userId: { type: mongoose.Schema.Types.ObjectId, required: true },
+  nombre: { type: String, required: true },
+  version: { type: String, required: true },
+  descripcion: { type: String, required: true },
+  // user: { type: mongoose.Schema.Types.ObjectId, required: true },
+  user: { type: String, required: true },
 });
 
 const Project = mongoose.model("Project", projectSchema);

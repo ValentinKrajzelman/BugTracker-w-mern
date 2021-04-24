@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -13,7 +13,7 @@ const NavBar = () => {
         <img src="favicon.png" height="40"></img>
         BugTracker <small>v0.1</small>
       </Link>
-      {isAuthenticated && (
+      {/* {isAuthenticated && (
         <div className="nav-item dropdown navbar-text">
           <a
             className="nav-link dropdown-toggle"
@@ -29,15 +29,24 @@ const NavBar = () => {
             </a>
           </div>
         </div>
+      )} */}
+      {isAuthenticated && (
+        <Link to="newProject">
+          <button className="btn-secondary rounded-circle border border-dark">
+            +
+          </button>
+        </Link>
       )}
-      <Link to="newProject">
-        <button className="rounded-circle border border-dark">+</button>
-      </Link>
 
       <ul className="navbar-nav ml-auto">
         {!isAuthenticated && (
           <li className="nav-item">
-            <button onClick={() => loginWithRedirect()}>Log In</button>
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => loginWithRedirect()}
+            >
+              Log In
+            </button>
           </li>
         )}
         {isAuthenticated && (
@@ -47,7 +56,12 @@ const NavBar = () => {
         )}
         {isAuthenticated && (
           <li className="nav-item">
-            <button onClick={() => logout()}>Log out</button>
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => logout()}
+            >
+              Log out
+            </button>
           </li>
         )}
       </ul>

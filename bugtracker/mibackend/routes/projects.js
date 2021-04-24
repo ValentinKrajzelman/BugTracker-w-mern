@@ -1,23 +1,24 @@
 const router = require("express").Router();
 let Project = require("../models/project.model");
 
-router.route("/post/:userid").post((req, res) => {
-  const name = req.body.name;
-  const version = req.body.version;
-  const idUser = req.params.userid;
+router.route("/post").post((req, res) => {
+  const nombre = req.data.nombre;
+  const version = req.data.version;
+  const descripcion = req.data.descripcion;
+  const user = req.data.user;
 
-  const newProject = new Project({ name, version, idUser });
+  const newProject = new Project({ nombre, version, descripcion, user });
 
   newProject
     .save()
     .then(() => res.json("Proyecto creado con exito."))
-    .catch((err) => res.status(400).json("Error: " + err));
+    .catch((err) => res.status(400).json("Error1: " + err));
 });
 
-router.route("/get/:userid").get((req, res) => {
-  Project.find({ userId: req.params.userid })
-    .then((projects) => res.json(projects))
-    .catch((err) => res.status(400).json("Error:" + err));
-});
+// router.route("/get/").get((req, res) => {
+//   Project.find({ user: req.params.userid })
+//     .then((projects) => res.json(projects))
+//     .catch((err) => res.status(400).json("Error1:" + err));
+// });
 
 module.exports = router;
