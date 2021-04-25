@@ -24,10 +24,11 @@ const NewProject = () => {
 
     console.log(form);
 
-    axios.post("http://localhost:5000/project/post", form);
-    // .then((res) => console.log(res.data));
+    axios
+      .post("http://localhost:5000/project/post", form)
+      .then((res) => console.log(res.data));
 
-    // window.location = "/";
+    window.location = "/";
   };
 
   return (

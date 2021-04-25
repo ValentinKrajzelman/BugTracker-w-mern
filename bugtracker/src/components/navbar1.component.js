@@ -1,11 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 // import LoginButton from "./loginBtn.component";
 
 const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
+
+  function constructorBarra() {
+    return (
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">
+          wola cara de bola
+        </a>
+      </div>
+    );
+  }
+
+  const barraProyectos = constructorBarra();
 
   return (
     <nav className="navbar bg-light navbar-expand-sm navbar-light">
@@ -13,7 +26,7 @@ const NavBar = () => {
         <img src="favicon.png" height="40"></img>
         BugTracker <small>v0.1</small>
       </Link>
-      {/* {isAuthenticated && (
+      {isAuthenticated && (
         <div className="nav-item dropdown navbar-text">
           <a
             className="nav-link dropdown-toggle"
@@ -23,13 +36,14 @@ const NavBar = () => {
           >
             Tus Proyectos
           </a>
-          <div class="dropdown-menu">
+          {/* <div class="dropdown-menu">
             <a class="dropdown-item" href="#">
               nada juj
             </a>
-          </div>
+          </div> */}
+          {barraProyectos}
         </div>
-      )} */}
+      )}
       {isAuthenticated && (
         <Link to="newProject">
           <button className="btn-secondary rounded-circle border border-dark">

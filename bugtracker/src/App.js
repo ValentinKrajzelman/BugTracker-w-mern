@@ -24,6 +24,9 @@ function App() {
       {isAuthenticated && (
         <Route path="/newProject" component={newProject}></Route>
       )}
+      {/* {isAuthenticated && (
+        <Route path="/project" component={}
+      )} */}
     </Router>
   );
 }

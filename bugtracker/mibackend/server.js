@@ -11,7 +11,12 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Conexion con la mongoDB establecida correctamente.");
@@ -25,5 +30,5 @@ app.use("/project", projectRouter);
 // app.use("/bug", bugRouter);
 
 app.listen(port, () => {
-  console.log("server corriendo en el puerto ${port}");
+  console.log("server corriendo en el puerto " + port);
 });
