@@ -22,7 +22,7 @@ const NewProject = () => {
   const save = (x) => {
     x.preventDefault();
 
-    console.log(form);
+    // console.log(form);
 
     axios
       .post("http://localhost:5000/project/post", form)

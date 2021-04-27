@@ -16,7 +16,7 @@ router.route("/post").post((req, res) => {
 });
 
 router.route("/get/").get((req, res) => {
-  Project.find({ user: req.body.user })
+  Project.find({ name: req.body.name })
     .then((projects) => res.json(projects))
     .catch((err) => res.status(400).json("Error1:" + err));
 });
