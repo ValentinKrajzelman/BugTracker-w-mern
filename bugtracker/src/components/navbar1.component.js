@@ -1,31 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
+import Cosas from "./projectsList.component";
+
 const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
-
-  function constructorBarra() {
-    axios
-      .get("http://localhost:5000/project/get/")
-      .then((res) => {
-        let listaProyectos = "";
-        for (let x = 0; x < Object.keys(res.data).length; x++) {
-          listaProyectos +=
-            "<Link to='/" +
-            res.data[x]._id +
-            "' className='dropdown-item'>" +
-            res.data[x].nombre +
-            "</Link> ";
-        }
-        console.log(listaProyectos);
-        return listaProyectos;
-      })
-      .catch((error) => console.log(error));
-  }
-
-  let barraProyectos = constructorBarra().then(console.log(barraProyectos));
 
   return (
     <nav className="navbar bg-light navbar-expand-sm navbar-light">
@@ -43,7 +24,9 @@ const NavBar = () => {
           >
             Tus Proyectos
           </a>
-          <div className="dropdown-menu">{constructorBarra()}</div>
+          <div className="dropdown-menu">
+            <Cosas />
+          </div>
         </div>
       )}
       {isAuthenticated && (

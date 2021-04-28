@@ -18,16 +18,17 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("Conexion con la mongoDB establecida correctamente.");
-});
-// .catch((err) => console.log(err));
+connection
+  .once("open", () => {
+    console.log("Conexion con la mongoDB establecida correctamente.");
+  })
+  .catch((err) => console.log(err));
 
 const projectRouter = require("./routes/projects");
-// const bugRouter = require("./routes/bugs");
+const bugRouter = require("./routes/bugs");
 
 app.use("/project", projectRouter);
-// app.use("/bug", bugRouter);
+app.use("/bug", bugRouter);
 
 app.listen(port, () => {
   console.log("server corriendo en el puerto " + port);
