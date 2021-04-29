@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const bugSchema = new mongoose.Schema(
   {
-    bugtext: { type: String, required: true },
-    state: { type: String, required: true },
-    projectId: { type: mongoose.Schema.Types.ObjectId, required: true },
+    bugtext: { type: String },
+    estado: { type: String },
+    projectId: { type: String },
   },
   {
     timestamp: true,

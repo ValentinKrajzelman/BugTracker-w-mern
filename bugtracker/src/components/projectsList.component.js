@@ -23,7 +23,6 @@ export default class Cosas extends Component {
             </Link>
           );
         }
-        // console.log(listaProyectos);
         this.setState({ lista: listaProyectos });
       })
 

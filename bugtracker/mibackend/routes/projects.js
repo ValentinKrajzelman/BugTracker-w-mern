@@ -20,5 +20,10 @@ router.route("/get/").get((req, res) => {
     .then((projects) => res.json(projects))
     .catch((err) => res.status(400).json("Error1:" + err));
 });
+router.route("/get/:id").get((req, res) => {
+  Project.find({ _id: req.params.id })
+    .then((projects) => res.json(projects))
+    .catch((err) => res.status(400).json("Error1:" + err));
+});
 
 module.exports = router;

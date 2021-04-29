@@ -30,7 +30,7 @@ const NavBar = () => {
         </div>
       )}
       {isAuthenticated && (
-        <Link to="newProject">
+        <Link to="/newProject">
           <button className="btn-secondary rounded-circle border border-dark">
             +
           </button>

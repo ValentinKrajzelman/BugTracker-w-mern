@@ -26,9 +26,6 @@ function App() {
         <Route path="/newProject" component={newProject}></Route>
       )}
       {isAuthenticated && <Route path="/proj/" component={userProject}></Route>}
-      {/* {isAuthenticated && (
-        <Route path="/project" component={}
-      )} */}
     </Router>
   );
 }
