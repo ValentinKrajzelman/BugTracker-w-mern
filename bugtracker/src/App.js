@@ -13,19 +13,22 @@ function App() {
 
   return (
     <Router>
-      <div className="container-fluid p-0">
+      <div className="container-fluid pr-5 pl-5">
         <NavBar />
+
+        {!isAuthenticated && (
+          <Route exact path="/" component={LandingPage}></Route>
+        )}
+        {isAuthenticated && (
+          <Route exact path="/" component={mainUserPage}></Route>
+        )}
+        {isAuthenticated && (
+          <Route path="/newProject" component={newProject}></Route>
+        )}
+        {isAuthenticated && (
+          <Route path="/proj/" component={userProject}></Route>
+        )}
       </div>
-      {!isAuthenticated && (
-        <Route exact path="/" component={LandingPage}></Route>
-      )}
-      {isAuthenticated && (
-        <Route exact path="/" component={mainUserPage}></Route>
-      )}
-      {isAuthenticated && (
-        <Route path="/newProject" component={newProject}></Route>
-      )}
-      {isAuthenticated && <Route path="/proj/" component={userProject}></Route>}
     </Router>
   );
 }

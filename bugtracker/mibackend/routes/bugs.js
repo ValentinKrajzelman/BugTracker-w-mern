@@ -4,9 +4,10 @@ let Bugs = require("../models/bug.model");
 router.route("/post/:projectid").post((req, res) => {
   const bugtext = req.body.bugtext;
   const estado = req.body.estado;
+  const fechacreacion = req.body.fechacreacion;
   const projectId = req.params.projectid;
 
-  const newBug = new Bugs({ bugtext, estado, projectId });
+  const newBug = new Bugs({ bugtext, estado, projectId, fechacreacion });
 
   newBug
     .save()

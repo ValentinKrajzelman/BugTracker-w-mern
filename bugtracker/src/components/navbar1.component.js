@@ -11,7 +11,10 @@ const NavBar = () => {
   return (
     <nav className="navbar bg-light navbar-expand-sm navbar-light">
       <Link to="/" className="navbar-brand ml-3">
-        <img src="favicon.png" height="40"></img>
+        <img
+          src="https://cdn.icon-icons.com/icons2/2065/PNG/512/bug_icon_125029.png"
+          height="40"
+        ></img>
         BugTracker <small>v0.1</small>
       </Link>
       {isAuthenticated && (

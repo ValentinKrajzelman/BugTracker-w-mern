@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
 
-const bugSchema = new mongoose.Schema(
-  {
-    bugtext: { type: String },
-    estado: { type: String },
-    projectId: { type: String },
-  },
-  {
-    timestamp: true,
-  }
-);
+const bugSchema = new mongoose.Schema({
+  bugtext: { type: String, required: true },
+  estado: { type: String, required: true },
+  fechacreacion: { type: Date, required: true },
+  projectId: { type: String, required: true },
+});
 
 module.exports = mongoose.model("Bug", bugSchema);

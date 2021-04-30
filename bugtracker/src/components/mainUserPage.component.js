@@ -8,7 +8,7 @@ const mainUserPage = () => {
         <div className="h1">Bienvenid@ de nuevo :)</div>
         <div className="h4">
           Si queres crear un nuevo proyecto donde anotar bugs hacer click
-          <Link to="newProject">
+          <Link to="newProject" className="h5">
             <mark>Aca</mark>
           </Link>
           tambien podes crealo clikeando el icono de la barra de navegacion, si
