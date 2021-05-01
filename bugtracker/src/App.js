@@ -6,7 +6,7 @@ import NavBar from "./components/navbar1.component";
 import LandingPage from "./components/landingPage.component";
 import mainUserPage from "./components/mainUserPage.component";
 import newProject from "./components/newProject.component";
-import userProject from "./components/userProject.component";
+// import userProject from "./components/userProject.component";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -25,9 +25,9 @@ function App() {
         {isAuthenticated && (
           <Route path="/newProject" component={newProject}></Route>
         )}
-        {isAuthenticated && (
+        {/* {isAuthenticated && (
           <Route path="/proj/" component={userProject}></Route>
-        )}
+        )} */}
       </div>
     </Router>
   );
