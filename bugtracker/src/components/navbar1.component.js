@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
-import Cosas from "./projectsList.component";
+import ProjectList from "./projectsList.component";
 
 const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
@@ -28,7 +28,7 @@ const NavBar = () => {
             Tus Proyectos
           </a>
           <div className="dropdown-menu">
-            <Cosas />
+            <ProjectList />
           </div>
         </div>
       )}

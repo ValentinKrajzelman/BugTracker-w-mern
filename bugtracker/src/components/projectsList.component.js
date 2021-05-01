@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default class Cosas extends Component {
+export default class ProjectList extends Component {
   constructor(props) {
     super(props);
 
