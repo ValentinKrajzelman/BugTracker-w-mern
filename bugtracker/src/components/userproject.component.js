@@ -2,8 +2,6 @@ import React, { Component } from "react";
 // import { useLocation } from "react-router-dom";
 import axios from "axios";
 
-import ProjectRow from "./projectRow.component";
-
 export default class userProject extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +11,9 @@ export default class userProject extends Component {
     this.seleccionEstado = this.seleccionEstado.bind(this);
 
     this.state = {
-      idProyecto: window.location.href.slice(
-        window.location.href.indexOf("Proj/") + 5
-      ),
+      // idProyecto: window.location.href.slice(
+      //   window.location.href.indexOf("Proj/") + 5
+      // ),
       nombreProyecto: "",
       versionProyecto: "",
       estadoActual: "resuelto",
@@ -38,28 +36,11 @@ export default class userProject extends Component {
   }
 
   setUpEstados() {
-    this.setState(
-      {
-        idProyecto: window.location.href.slice(
-          window.location.href.indexOf("Proj/") + 5
-        ),
-      },
-      () =>
-        axios
-          .get("http://localhost:5000/project/get/" + this.state.idProyecto)
-          .then((res) => {
-            this.setState({
-              nombreProyecto: res.data[0].nombre,
-              versionProyecto: res.data[0].version,
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-    );
-
     axios
-      .get("http://localhost:5000/bug/get/" + this.state.idProyecto)
+      .get(
+        "http://localhost:5000/bug/get/" +
+          window.location.href.slice(window.location.href.indexOf("Proj/") + 5)
+      )
       .then((res) => {
         let bugsPorFecha = [];
         if (res.data.length > 0) {
@@ -79,6 +60,21 @@ export default class userProject extends Component {
             () => this.constructorRows()
           );
         }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get(
+        "http://localhost:5000/project/get/" +
+          window.location.href.slice(window.location.href.indexOf("Proj/") + 5)
+      )
+      .then((res) => {
+        this.setState({
+          nombreProyecto: res.data[0].nombre,
+          versionProyecto: res.data[0].version,
+        });
       })
       .catch((error) => {
         console.log(error);
