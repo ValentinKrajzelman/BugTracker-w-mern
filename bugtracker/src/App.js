@@ -7,6 +7,7 @@ import LandingPage from "./components/landingPage.component";
 import mainUserPage from "./components/mainUserPage.component";
 import newProject from "./components/newProject.component";
 import userProject from "./components/userProject.component";
+import NewBug from "./components/newBug.component";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -28,6 +29,7 @@ function App() {
         {isAuthenticated && (
           <Route path="/proj/" component={userProject}></Route>
         )}
+        {isAuthenticated && <Route path="/NewBug/" component={NewBug}></Route>}
       </div>
     </Router>
   );

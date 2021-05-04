@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default class userProject extends Component {
@@ -11,9 +11,6 @@ export default class userProject extends Component {
     this.seleccionEstado = this.seleccionEstado.bind(this);
 
     this.state = {
-      // idProyecto: window.location.href.slice(
-      //   window.location.href.indexOf("Proj/") + 5
-      // ),
       nombreProyecto: "",
       versionProyecto: "",
       estadoActual: "resuelto",
@@ -128,7 +125,16 @@ export default class userProject extends Component {
               </div>
             </div>
             <div className="col-sm-2 p-4 h2 m-0 bg-success">
-              <button className="float-right">Nuevo bug</button>
+              <Link
+                to={
+                  "/NewBug/" +
+                  window.location.href.slice(
+                    window.location.href.indexOf("Proj/") + 5
+                  )
+                }
+              >
+                <button className="float-right"> New entry</button>
+              </Link>
             </div>
             <div className="col-sm-4 h2 m-0 bg-secondary">
               <button

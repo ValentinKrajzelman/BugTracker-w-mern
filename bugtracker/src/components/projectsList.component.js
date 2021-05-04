@@ -16,7 +16,6 @@ export default class ProjectList extends Component {
       .get("http://localhost:5000/project/get/")
       .then((res) => {
         let listaProyectos = [];
-        // si se rompe pone Object.keys(res.data).length en vez de res.data.lenght
         for (let x = 0; x < Object.keys(res.data).length; x++) {
           listaProyectos[x] = (
             <Link to={"/Proj/" + res.data[x]._id} className="dropdown-item">
