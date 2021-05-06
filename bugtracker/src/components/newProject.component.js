@@ -26,7 +26,8 @@ const NewProject = () => {
       .post("http://localhost:5000/project/post", form)
       .then((res) => console.log(res.data));
 
-    window.location = "/";
+    console.log(form);
+    // window.location = "/";
   };
 
   return (

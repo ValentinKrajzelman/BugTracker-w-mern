@@ -9,6 +9,9 @@ export default class userProject extends Component {
     this.setUpEstados = this.setUpEstados.bind(this);
     this.constructorRows = this.constructorRows.bind(this);
     this.seleccionEstado = this.seleccionEstado.bind(this);
+    this.bugHecho = this.bugHecho.bind(this);
+    this.bugBorrar = this.bugBorrar.bind(this);
+    this.armarLink = this.armarLink.bind(this);
 
     this.state = {
       nombreProyecto: "",
@@ -30,6 +33,38 @@ export default class userProject extends Component {
     ) {
       this.setUpEstados();
     }
+  }
+
+  bugHecho(x) {
+    let arrayBugs = this.state.bugs;
+    arrayBugs.find((bug) => bug._id == x.target.id).estado = "resuelto";
+    const bug = arrayBugs.find((bug) => bug._id == x.target.id);
+    this.setState(
+      {
+        bugs: arrayBugs,
+      },
+      () => this.constructorRows()
+    );
+    axios
+      .post("http://localhost:5000/bug/update/" + x.target.id, bug)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  }
+  bugBorrar(x) {
+    let arrayBugs = this.state.bugs;
+    const indice = arrayBugs.findIndex((bug) => bug._id == x.target.id);
+    arrayBugs.splice(indice, 1);
+    const bug = arrayBugs.find((bug) => bug._id == x.target.id);
+    this.setState(
+      {
+        bugs: arrayBugs,
+      },
+      () => this.constructorRows()
+    );
+    axios
+      .delete("http://localhost:5000/bug/delete/" + x.target.id, bug)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   }
 
   setUpEstados() {
@@ -78,6 +113,11 @@ export default class userProject extends Component {
       });
   }
 
+  armarLink(x) {
+    const path = { pathname: "/NewBug/", bugId: x };
+    return path;
+  }
+
   seleccionEstado(estado) {
     this.setState(
       {
@@ -102,9 +142,24 @@ export default class userProject extends Component {
           </div>
           <div className="col-sm-2">{seleccionBugs[x].estado}</div>
           <div className="col-sm-3">
-            <button>Hecho</button>
-            <button>Modificar</button>
-            <button>Borrar</button>
+            <button id={seleccionBugs[x]._id} onClick={this.bugHecho}>
+              Hecho
+            </button>
+            <Link
+              to={
+                "/NewBug/" +
+                window.location.href.slice(
+                  window.location.href.indexOf("Proj/") + 5
+                ) +
+                "/update/" +
+                seleccionBugs[x]._id
+              }
+            >
+              <button>Modificar</button>
+            </Link>
+            <button id={seleccionBugs[x]._id} onClick={this.bugBorrar}>
+              Borrar
+            </button>
           </div>
         </div>
       );

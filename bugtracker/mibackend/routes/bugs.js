@@ -27,11 +27,17 @@ router.route("/get/bugid/:bugid").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/delete/:bugid").delete((req, res) => {
+  Bugs.findByIdAndDelete(req.params.bugid)
+    .then(() => res.json("Bug eliminado con exito"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 router.route("/update/:bugid").post((req, res) => {
   Bugs.findById(req.params.bugid)
     .then((bug) => {
-      bug.bugText = req.body.bugTextBody;
-      bug.state = req.body.stateBody;
+      bug.bugtext = req.body.bugtext;
+      bug.estado = req.body.estado;
 
       bug
         .save()
