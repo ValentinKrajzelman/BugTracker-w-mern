@@ -76,21 +76,31 @@ export default class NewBug extends Component {
   }
 
   subirBug() {
-    this.setState(
-      {
-        fechacreacion: Date(),
-      },
-      () => {
-        axios
-          .post(
-            "http://localhost:5000/bug/post/" + this.state.projectId,
-            this.state
-          )
-          .then((res) => console.log(res.data))
-          .catch((err) => console.log(err));
-      }
-    );
-    console.log(this.state);
+    if (this.state.bugId.length < 25) {
+      axios
+        .post(
+          "http://localhost:5000/bug/update/" + this.state.bugId,
+          this.state
+        )
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
+    } else {
+      this.setState(
+        {
+          fechacreacion: Date(),
+        },
+        () => {
+          axios
+            .post(
+              "http://localhost:5000/bug/post/" + this.state.projectId,
+              this.state
+            )
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err));
+        }
+      );
+      console.log(this.state);
+    }
   }
 
   render() {
