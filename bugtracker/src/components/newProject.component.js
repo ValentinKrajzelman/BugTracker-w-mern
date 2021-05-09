@@ -10,8 +10,13 @@ const NewProject = () => {
     version: "",
     descripcion: "",
     user: user.name,
+    projectId: window.location.href.slice(
+      window.location.href.indexOf("newProject/") + 11
+    ),
   });
 
+  //tengo que buscar el proyecto en cuestion hacer que se muestre en el input mediante el form y ya esta
+  //ademas fijate como acomodas lo del link para que cada boton funcione bien, no tengo tiempo ahora
   const handlechange = (x) => {
     let name = x.target.name;
     let value = x.target.value;

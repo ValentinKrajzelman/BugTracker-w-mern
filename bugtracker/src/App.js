@@ -27,7 +27,7 @@ function App() {
           <Route path="/newProject" component={newProject}></Route>
         )}
         {isAuthenticated && (
-          <Route path="/proj/" component={userProject}></Route>
+          <Route path="/proj/:id" component={userProject}></Route>
         )}
         {isAuthenticated && <Route path="/NewBug/" component={NewBug}></Route>}
       </div>

@@ -19,6 +19,7 @@ export default class userProject extends Component {
       estadoActual: "resuelto",
       bugs: [],
       rows: "",
+      versionBox: "x",
     };
   }
 
@@ -176,7 +177,16 @@ export default class userProject extends Component {
               {this.state.nombreProyecto}
               <div className="float-right">
                 v.{this.state.versionProyecto}
-                <button className="h2">cosas</button>
+                <a
+                  href={
+                    "http://localhost:3000/newProject" +
+                    window.location.href.slice(
+                      window.location.href.indexOf("Proj/") + 5
+                    )
+                  }
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
               </div>
             </div>
             <div className="col-sm-2 p-4 h2 m-0 bg-success">
