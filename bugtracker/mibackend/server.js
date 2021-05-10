@@ -31,5 +31,5 @@ app.use("/project", projectRouter);
 app.use("/bug", bugRouter);
 
 app.listen(port, () => {
-  console.log("server corriendo en el puerto " + port);
+  console.log(" server corriendo en el puerto " + port);
 });
