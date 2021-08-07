@@ -177,7 +177,7 @@ export default class userProject extends Component {
               {this.state.nombreProyecto}
               <div className="float-right">
                 v.{this.state.versionProyecto}
-                <a
+                {/* <a
                   href={
                     "http://localhost:3000/newProject" +
                     window.location.href.slice(
@@ -186,7 +186,7 @@ export default class userProject extends Component {
                   }
                 >
                   <i class="fas fa-pencil-alt"></i>
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-sm-2 p-4 h2 m-0 bg-success">
