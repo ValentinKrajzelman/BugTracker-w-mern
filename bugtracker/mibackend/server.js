@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors"); //cross origin resouce origin
+const cors = require("cors"); //cross origin resouce sharing
 const mongoose = require("mongoose");
 
 require("dotenv").config();
