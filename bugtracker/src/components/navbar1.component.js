@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import {AiFillBug} from "react-icons/ai";
 
 import ProjectList from "./projectsList.component";
 
@@ -8,9 +9,9 @@ const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
 
   return (
-    <nav className="navbar bg-light navbar-expand-sm navbar-light">
-      <Link to="/" className="navbar-brand ml-3">
-        <i class="fas fa-bug"></i>
+    <nav className="">
+     <AiFillBug/> 
+     <Link to="/" className="">   
         BugTracker <small>v0.1</small>
       </Link>
       {isAuthenticated && (
@@ -36,11 +37,11 @@ const NavBar = () => {
         </Link>
       )}
 
-      <ul className="navbar-nav ml-auto">
+      <ul className="float-right"> 
         {!isAuthenticated && (
-          <li className="nav-item">
+          <li className=""> 
             <button
-              className="btn btn-outline-primary"
+              className=""
               onClick={() => loginWithRedirect()}
             >
               Log In
