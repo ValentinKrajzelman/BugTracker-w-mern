@@ -5,11 +5,11 @@ const LandingPage = () => {
     <div className="">
       <div className="">
         <h3 className="">
-          El mantenimiento de tu proyecto puede ser un desafio. Mantener
-          organizado a tu equipo, no tiene por que serlo.
+          Lo que separa un sistema excelente de uno perfecto 
+          puede ser un solo bug, que no se te escape ni uno:
         </h3>
 
-        <h1 className="">
+        <h1 className="min-w-max">
           <mark> BugTracker. </mark>
         </h1>
       </div>
