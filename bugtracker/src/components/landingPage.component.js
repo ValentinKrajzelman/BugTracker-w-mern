@@ -6,7 +6,7 @@ const LandingPage = () => {
       <div className="">
         <h3 className="">
           Lo que separa un sistema excelente de uno perfecto 
-          puede ser un solo bug, que no se te escape ni uno:
+          puede ser un solo bug, que no se te olvide ni uno:
         </h3>
 
         <h1 className="min-w-max">
