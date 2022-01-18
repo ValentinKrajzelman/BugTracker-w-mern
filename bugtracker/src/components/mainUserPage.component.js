@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 
 const mainUserPage = () => {
   return (
-    <div className="row m-5">
-      <div className="col-sm-7">
-        <div className="h1">Bienvenid@ de nuevo :)</div>
-        <div className="h4">
+    <div className="">
+      <div className="">
+        <div className="">Bienvenid@ de nuevo :)</div>
+        <div className="">
           Si queres crear un nuevo proyecto donde anotar bugs hacer click
-          <Link to="newProject" className="h5">
+          <Link to="newProject" className="">
             <mark>Aca</mark>
           </Link>
           tambien podes crealo clikeando el icono de la barra de navegacion, si
           ya tenes un proyecto seleccionalo en el menu deslizable de arriba.
         </div>
       </div>
-      <div className="col-sm-5">
+      <div className="">
         aca poner alguna imagen de como seleccionar el proyecto o algo asi
       </div>
     </div>
