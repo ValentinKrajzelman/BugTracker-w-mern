@@ -3,6 +3,7 @@
 # dependencies
 /mibackend/node_modules
 /mibackend/.env
+/.env
 /node_modules
 /.pnp
 .pnp.js
