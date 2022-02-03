@@ -18,7 +18,7 @@ export default class ProjectList extends Component {
         let listaProyectos = [];
         for (let x = 0; x < Object.keys(res.data).length; x++) {
           listaProyectos[x] = (
-            <Link to={"/Proj/" + res.data[x]._id} className="dropdown-item">
+            <Link to={"/Proj/" + res.data[x]._id} className="">
               {res.data[x].nombre}
             </Link>
           );

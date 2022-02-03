@@ -134,15 +134,15 @@ export default class userProject extends Component {
     let listaBugs = [];
     for (let x = 0; x < seleccionBugs.length; x++) {
       listaBugs[x] = (
-        <div className="row">
-          <div className="col-sm-1">Nro.{x + 1}</div>
-          <div className="col-sm-4">{seleccionBugs[x].bugtext}</div>
-          <div className="col-sm-2">
+        <div className="">
+          <div className="">Nro.{x + 1}</div>
+          <div className="">{seleccionBugs[x].bugtext}</div>
+          <div className="">
             {seleccionBugs[x].fechacreacion.slice(2, 10)}{" "}
             {seleccionBugs[x].fechacreacion.slice(11, 19)} hrs
           </div>
-          <div className="col-sm-2">{seleccionBugs[x].estado}</div>
-          <div className="col-sm-3">
+          <div className="">{seleccionBugs[x].estado}</div>
+          <div className="">
             <button id={seleccionBugs[x]._id} onClick={this.bugHecho}>
               Hecho
             </button>
@@ -172,10 +172,10 @@ export default class userProject extends Component {
     return (
       <div>
         <div>
-          <div className="row m-0">
-            <div className="col-sm-6 p-4 h1 m-0 bg-dark">
+          <div className="">
+            <div className="">
               {this.state.nombreProyecto}
-              <div className="float-right">
+              <div className="">
                 v.{this.state.versionProyecto}
                 {/* <a
                   href={
@@ -189,7 +189,7 @@ export default class userProject extends Component {
                 </a> */}
               </div>
             </div>
-            <div className="col-sm-2 p-4 h2 m-0 bg-success">
+            <div className="">
               <Link
                 to={
                   "/NewBug/" +
@@ -198,24 +198,24 @@ export default class userProject extends Component {
                   )
                 }
               >
-                <button className="float-right"> New entry</button>
+                <button className=""> New entry</button>
               </Link>
             </div>
-            <div className="col-sm-4 h2 m-0 bg-secondary">
+            <div className="">
               <button
-                className=" mt-4 m-1"
+                className=""
                 onClick={() => this.seleccionEstado("resuelto")}
               >
                 Pendientes
               </button>
               <button
-                className="m-1"
+                className=""
                 onClick={() => this.seleccionEstado("pendiente")}
               >
                 Resueltos
               </button>
               <button
-                className="m-1"
+                className=""
                 onClick={() => this.seleccionEstado("todo")}
               >
                 Todos

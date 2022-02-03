@@ -37,54 +37,54 @@ const NewProject = () => {
 
   return (
     <div>
-      <div className="row">
-        <div className="col-sm-4"></div>
-        <form className="m-5 col-sm-4 " onSubmit={save}>
-          <div className="form-group">
+      <div className="">
+        <div className=""></div>
+        <form className=" " onSubmit={save}>
+          <div className="">
             <label>Nombre del proyecto:</label>
             <input
               name="nombre"
               type="text"
               required
-              className="form-control"
+              className=""
               placeholder="ej: BugTracker"
               onChange={handlechange}
             ></input>
-            <div className="small">
+            <div className="">
               *No se puede cambiar una vez creado el projecto.
             </div>
           </div>
-          <div className="form-group">
+          <div className="">
             <label>versión:</label>
             <input
               name="version"
               type="text"
               required
               placeholder="ej: v0.1"
-              className="form-control"
+              className=""
               onChange={handlechange}
             ></input>
           </div>
-          <div className="form-group">
+          <div className="">
             <label>Descripcion breve:</label>
             <textarea
               name="descripcion"
               type="text"
               rows="5"
               placeholder="ej: Una pagina web para mantener constancia de bugs en tus proyectos"
-              className="form-control"
+              className=""
               onChange={handlechange}
             ></textarea>
           </div>
-          <div className="form-group">
+          <div className="">
             <input
               type="submit"
               value="Create Exercise Log"
-              className="btn btn-primary"
+              className=""
             />
           </div>
         </form>
-        <div className="col-sm-4"></div>
+        <div className=""></div>
       </div>
     </div>
   );

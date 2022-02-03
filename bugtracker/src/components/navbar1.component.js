@@ -10,14 +10,14 @@ const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
 
   return (
-  <nav className="flex justify-between w-full h-16 bg-blue-400 items-center text-xl">
-     <div className="flex items-center">
-     <AiFillBug className="ml-5"/> 
-     <Link to="/" className="mr-6">   
+  <nav className="">
+     <div className="">
+     <AiFillBug className=""/> 
+     <Link to="/" className="">   
         BugTracker <small>v0.1</small>
       </Link>
       {isAuthenticated && (
-        <div className="flex pl-2">
+        <div className="">
           <a
             className=""
             href="#"
@@ -25,7 +25,7 @@ const NavBar = () => {
           >
             Tus Proyectos
           </a>
-          <RiArrowDropDownLine className="text-3xl"/>
+          <RiArrowDropDownLine className=""/>
           <div className="">
             <ProjectList />
           </div>
@@ -33,17 +33,17 @@ const NavBar = () => {
       )}
       {isAuthenticated && (
         <Link to="/newProject">
-          <AiFillPlusCircle className="ml-2 text-2xl"/>
+          <AiFillPlusCircle className=""/>
         </Link>
       )}
       </div>
 
     <div>  
-      <ul className="flex"> 
+      <ul className=""> 
         {!isAuthenticated && (
           <li className=""> 
             <button
-              className="mr-5"
+              className=""
               onClick={() => loginWithRedirect()}
             >
               Log In
@@ -51,14 +51,14 @@ const NavBar = () => {
           </li>
         )}
         {isAuthenticated && (
-          <li className="mr-5 ">
+          <li className="">
             <div className="">{user.name}</div>
           </li>
         )}
         {isAuthenticated && (
           <li className="">
             <button
-              className="mr-5"
+              className=""
               onClick={() => logout()}
             >
               Log out

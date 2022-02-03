@@ -106,10 +106,10 @@ export default class NewBug extends Component {
   render() {
     return (
       <div>
-        <div className="row">Nuevo Bug:</div>
-        <div className="row">
+        <div className="">Nuevo Bug:</div>
+        <div className="">
           <form>
-            <div className="col-sm-8">
+            <div className="">
               <label>Descripcion breve del bug:</label>
 
               <textarea
@@ -117,22 +117,22 @@ export default class NewBug extends Component {
                 onChange={this.modificarState2}
                 name="bugtext"
                 placeholder="ej: No funciona el boton submit del componente newBug."
-                className="form-control"
+                className=""
                 value={this.state.bugtext}
               ></textarea>
             </div>
-            <div className="nav-item dropdown navbar-text">
+            <div className="">
               <a
-                className="nav-link dropdown-toggle"
+                className=""
                 href="#"
                 id="navbardrop"
                 data-toggle="dropdown"
               >
                 Estado
               </a>
-              <div className="dropdown-menu" name="estado">
+              <div className="" name="estado">
                 <div
-                  className="dropdown-item"
+                  className=""
                   value="pendiente"
                   onClick={this.modificarState1}
                   id="pendiente"
@@ -141,7 +141,7 @@ export default class NewBug extends Component {
                 </div>
                 <div
                   id="resuelto"
-                  className="dropdown-item"
+                  className=""
                   name="estado"
                   value="resuelto"
                   onClick={this.modificarState}
@@ -152,7 +152,7 @@ export default class NewBug extends Component {
             </div>
           </form>
         </div>
-        <button className="btn" onClick={this.subirBug}>
+        <button className="" onClick={this.subirBug}>
           {" "}
           Submit
         </button>

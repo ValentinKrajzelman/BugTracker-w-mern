@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="px-10 bg-gray-400 w-screen h-screen">
+      <div className="">
         <NavBar />
 
         {!isAuthenticated && (
