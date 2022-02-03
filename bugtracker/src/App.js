@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import NavBar from "./components/navbar1.component";
