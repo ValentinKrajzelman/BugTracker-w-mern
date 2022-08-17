@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="">
+      <div className="cosas">
         <NavBar />
 
         {!isAuthenticated && (
